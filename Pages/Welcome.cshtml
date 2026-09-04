@@ -1,0 +1,13 @@
+@page
+@model Test____G1.Pages.WelcomeModel
+@{
+    ViewData["Title"] = "หน้าหลัก";
+}
+
+<div class="auth-card welcome-box">
+    <h1>ยินดีต้อนรับ, @Model.FullName</h1>
+    <p>คุณเข้าสู่ระบบเรียบร้อยแล้ว</p>
+    <form method="post">
+        <button type="submit" class="btn-primary">ออกจากระบบ</button>
+    </form>
+</div>

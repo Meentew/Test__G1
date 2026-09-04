@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"] - MyAuthApp</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header class="site-header">
+        <a href="/Login" class="logo">MyAuthApp</a>
+        <nav>
+            <a href="/Login">เข้าสู่ระบบ</a>
+            <a href="/Register">ลงทะเบียน</a>
+        </nav>
+    </header>
+
+    <div class="page-content">
+        @RenderBody()
+    </div>
+
+    <footer class="site-footer">
+        &copy; 2026 MyAuthApp
+    </footer>
+</body>
+</html>

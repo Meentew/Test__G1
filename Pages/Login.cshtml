@@ -1,0 +1,33 @@
+@page
+@model Test____G1.Pages.LoginModel
+@{
+    ViewData["Title"] = "เข้าสู่ระบบ";
+}
+
+<div class="auth-card">
+    <h1>เข้าสู่ระบบ</h1>
+    <p class="subtitle">ยินดีต้อนรับกลับ กรุณาเข้าสู่ระบบ</p>
+
+    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+    {
+        <div class="message-error">@Model.ErrorMessage</div>
+    }
+
+    <form method="post">
+        <div class="form-group">
+            <label for="Username">ชื่อผู้ใช้ (Username)</label>
+            <input type="text" id="Username" name="Username" value="@Model.Username" />
+        </div>
+
+        <div class="form-group">
+            <label for="Password">รหัสผ่าน</label>
+            <input type="password" id="Password" name="Password" />
+        </div>
+
+        <button type="submit" class="btn-primary">เข้าสู่ระบบ</button>
+
+        <div class="form-footer">
+            ยังไม่มีบัญชี? <a href="/Register">ลงทะเบียน</a>
+        </div>
+    </form>
+</div>
