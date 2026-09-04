@@ -1,0 +1,62 @@
+@page
+@model Test____G1.Pages.RegisterModel
+@{
+    ViewData["Title"] = "สมัครสมาชิก";
+}
+
+<div class="auth-card">
+    <h1>สร้างบัญชีใหม่</h1>
+    <p class="subtitle">กรอกข้อมูลเพื่อลงทะเบียนใช้งาน</p>
+
+    @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+    {
+        <div class="message-error">@Model.ErrorMessage</div>
+    }
+    @if (!string.IsNullOrEmpty(Model.SuccessMessage))
+    {
+        <div class="message-success">@Model.SuccessMessage</div>
+    }
+
+    <form method="post">
+        <div class="form-group">
+            <label for="Name">ชื่อ</label>
+            <input type="text" id="Name" name="Name" value="@Model.Name" />
+        </div>
+
+        <div class="form-group">
+            <label for="Surname">นามสกุล</label>
+            <input type="text" id="Surname" name="Surname" value="@Model.Surname" />
+        </div>
+
+        <div class="form-group">
+            <label for="Email">อีเมล</label>
+            <input type="email" id="Email" name="Email" value="@Model.Email" />
+        </div>
+
+        <div class="form-group">
+            <label for="Phone">เบอร์โทรศัพท์</label>
+            <input type="text" id="Phone" name="Phone" value="@Model.Phone" placeholder="เฉพาะตัวเลข" />
+        </div>
+
+        <div class="form-group">
+            <label for="Username">ชื่อผู้ใช้ (Username)</label>
+            <input type="text" id="Username" name="Username" value="@Model.Username" />
+        </div>
+
+        <div class="form-group">
+            <label for="Password">รหัสผ่าน</label>
+            <input type="password" id="Password" name="Password" />
+        </div>
+
+        <div class="form-group">
+            <label for="ConfirmPassword">ยืนยันรหัสผ่าน</label>
+            <input type="password" id="ConfirmPassword" name="ConfirmPassword" />
+        </div>
+
+        <button type="submit" class="btn-primary">ลงทะเบียน</button>
+
+        <div class="form-footer">
+            มีบัญชีอยู่แล้ว? <a href="/Login">เข้าสู่ระบบ</a>
+        </div>
+    </form>
+</div>
